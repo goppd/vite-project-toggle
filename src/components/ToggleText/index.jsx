@@ -31,7 +31,30 @@ function ToggleText() {
   }
 
   return (
-    
+    <div className={styles.toggleContainer}>
+      <button onClick={toggleText}>
+        {isVisible ? 'Hide text' : 'Show text'}
+      </button>
+      <div className={styles.durationInput}>
+        <label>
+          Animation duration (сек):
+          <input
+            type="number"
+            step="0.1"
+            value={duration}
+            onChange={handleDurationChange}
+          />
+        </label>
+      </div>
+      <div ref={textRef} className={toggleText}>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
+          distinctio sapiente aspernatur! Cupiditate earum consequatur delectus
+          praesentium vero unde cumque a quos ut dolorem. Aspernatur quam id
+          enim sequi veritatis.
+        </p>
+      </div>
+    </div>
   )
 }
 
